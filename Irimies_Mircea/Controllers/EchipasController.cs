@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Irimies_Mircea.Data;
 using Irimies_Mircea.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Irimies_Mircea.Controllers
 {
+    [Authorize(Policy = "OnlyAdministrators")]
     public class EchipasController : Controller
     {
         private readonly TeamContext _context;
